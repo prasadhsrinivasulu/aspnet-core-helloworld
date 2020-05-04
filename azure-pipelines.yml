@@ -34,3 +34,16 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
+- task: FortifySCA@5
+  inputs:
+    licenseFile: 'D:\InBoundFTP\MFTBDDNTUSE\Fortify_SCA_and_Apps_17.20\fortify.license'
+    runBuildTranslate: true
+    applicationType: 'dotnet'
+    fortifyProjects: '**\*.sln'
+    fortifyBuildId: '345'
+    runFortifyRulepackUpdate: false
+    runFortifyClean: true
+    scaVerbose: false
+    scaDebug: false
+    runFortifyScan: true
+    fortifyScanType: 'LocalScan'
