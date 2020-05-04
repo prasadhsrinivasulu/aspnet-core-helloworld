@@ -26,24 +26,13 @@ steps:
     solution: '$(solution)'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-
-- task: FortifySCA@5
+- task: CmdLine@2
   inputs:
-    licenseFile: '$(Build.SourcesDirectory)'
-    runBuildTranslate: true
-    applicationType: 'dotnet'
-    fortifyProjects: '**\*.sln'
-    fortifyBuildId: '345'
-    runFortifyRulepackUpdate: false
-    runFortifyClean: true
-    scaVerbose: false
-    scaDebug: false
-    runFortifyScan: true
-    fortifyScanType: 'LocalScan'
+    script: |
+      dir c:\
+      sourceanalyzer
