@@ -43,3 +43,15 @@ steps:
       Write-Host "Hello World"
       dir c:\
       hostname
+
+- task: PowerShellOnTargetMachines@3
+  inputs:
+    Machines: '15.113.161.181'
+    UserName: 'mfadmin'
+    UserPassword: 'j3+5Cv9HK-bf'
+    InlineScript: |
+      # Write your powershell commands here.
+      
+      Write-Output "Hello World"
+      dir c:\
+      sourceanalyzer
