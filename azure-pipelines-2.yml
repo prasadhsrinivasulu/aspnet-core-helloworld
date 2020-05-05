@@ -15,7 +15,6 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
