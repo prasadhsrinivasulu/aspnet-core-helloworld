@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  name: ps-bb
+  name: 'ps-bb'
   vmImage: 'windows-latest'
 
 variables:
